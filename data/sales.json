@@ -1,0 +1,72 @@
+[
+  {
+    "id": "S01",
+    "date": "2026-08-31",
+    "customer": "C01",
+    "category": "Office",
+    "amount": 100
+  },
+  {
+    "id": "S02",
+    "date": "01.09.2026",
+    "customer": "C01",
+    "category": "Office",
+    "amount": 40
+  },
+  {
+    "id": "S03",
+    "date": "2026-09-01",
+    "customer": "C02",
+    "category": "Office",
+    "amount": 30
+  },
+  {
+    "id": "S04",
+    "date": "02.09.2026",
+    "customer": "C01",
+    "category": "Electronics",
+    "amount": 200
+  },
+  {
+    "id": "S05",
+    "date": "2026-09-02",
+    "customer": "C03",
+    "category": "Furniture",
+    "amount": 300
+  },
+  {
+    "id": "S06",
+    "date": "2026-09-03",
+    "customer": "C02",
+    "category": "Office",
+    "amount": 60
+  },
+  {
+    "id": "S07",
+    "date": "03.09.2026",
+    "customer": "C03",
+    "category": "Electronics",
+    "amount": 400
+  },
+  {
+    "id": "S08",
+    "date": "2026-09-04",
+    "customer": "C04",
+    "category": "Furniture",
+    "amount": 150
+  },
+  {
+    "id": "S09",
+    "date": "05.09.2026",
+    "customer": "C04",
+    "category": "Office",
+    "amount": 60
+  },
+  {
+    "id": "S10",
+    "date": "2026-09-06",
+    "customer": "C01",
+    "category": "Electronics",
+    "amount": 200
+  }
+]

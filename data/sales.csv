@@ -1,0 +1,11 @@
+id;date;customer;category;amount
+S01;2026-08-31;C01;Office;100
+S02;01.09.2026;C01;Office;40
+S03;2026-09-01;C02;Office;30
+S04;02.09.2026;C01;Electronics;200
+S05;2026-09-02;C03;Furniture;300
+S06;2026-09-03;C02;Office;60
+S07;03.09.2026;C03;Electronics;400
+S08;2026-09-04;C04;Furniture;150
+S09;05.09.2026;C04;Office;60
+S10;2026-09-06;C01;Electronics;200
