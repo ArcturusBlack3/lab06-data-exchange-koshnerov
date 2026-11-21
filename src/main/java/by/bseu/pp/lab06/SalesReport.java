@@ -5,17 +5,35 @@ import java.util.ArrayList;
 import java.util.List;
 public final class SalesReport {
     private SalesReport() { }
-    /** TODO 7. Включить обе даты. Вернуть самостоятельный список, сохраняя порядок и повторы. */
+    
     public static List<Sale> filterByPeriod(List<Sale> sales, LocalDate from, LocalDate to) {
         Checks.sales(sales);
         Checks.period(from, to);
-        // TODO 7: реализуйте по условию лабораторной работы.
-        throw new UnsupportedOperationException("TODO 7");
+        
+        List<Sale> filtered = new ArrayList<>();
+
+        for (Sale sale : sales) {
+            LocalDate date = sale.getDate();
+
+            if (!date.isBefore(from) && !date.isAfter(to)) {
+                filtered.add(sale);
+            }
+        }
+
+        return filtered;
+        
     }
-    /** TODO 8. Сложить getAmount без округления. Пустой список даёт 0. */
+    
     public static double totalAmount(List<Sale> sales) {
         Checks.sales(sales);
-        // TODO 8: реализуйте по условию лабораторной работы.
-        throw new UnsupportedOperationException("TODO 8");
+        
+        double total = 0;
+
+        for (Sale sale : sales) {
+            total += sale.getAmount();
+        }
+
+        return total;
     }
+
 }

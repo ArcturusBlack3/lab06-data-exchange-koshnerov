@@ -12,19 +12,51 @@ import java.util.ArrayList;
 import java.util.List;
 public final class JsonSalesIO {
     private JsonSalesIO() { }
-    /** TODO 5. Читать UTF-8 через JsonSupport.parseArray и toSale.
-     * Нумерация записей с 1; порядок и повторы сохраняются. */
+    
+    
     public static List<Sale> read(Path path) throws IOException {
         Checks.path(path);
-        // TODO 5: реализуйте по условию лабораторной работы.
-        throw new UnsupportedOperationException("TODO 5");
+        
+         List<Sale> sales = new ArrayList<>();
+
+        try (BufferedReader reader =
+                     Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
+
+            JsonArray array = JsonSupport.parseArray(reader);
+
+            for (int i = 0; i < array.size(); i++) {
+                JsonElement element = array.get(i);
+
+                Sale sale = JsonSupport.toSale(element, i + 1);
+
+                sales.add(sale);
+            }
+        }
+
+        return sales;
+
     }
-    /** TODO 6. Проверить аргументы до открытия. Собрать JsonArray через toJson,
-     * создать папки и записать JSON через GSON.toJson(array, writer). */
+    
     public static void write(Path path, List<Sale> sales) throws IOException {
         Checks.path(path);
         Checks.sales(sales);
-        // TODO 6: реализуйте по условию лабораторной работы.
-        throw new UnsupportedOperationException("TODO 6");
+        
+        Path parent = path.toAbsolutePath().getParent();
+
+        if (parent != null) {
+            Files.createDirectories(parent);
+        }
+
+        JsonArray array = new JsonArray();
+
+        for (Sale sale : sales) {
+            array.add(JsonSupport.toJson(sale));
+        }
+
+        try (BufferedWriter writer =
+                     Files.newBufferedWriter(path, StandardCharsets.UTF_8)) {
+
+            JsonSupport.GSON.toJson(array, writer);
+        }
     }
 }
